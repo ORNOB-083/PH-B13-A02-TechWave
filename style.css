@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* outline: 1px solid red; */
 }
 
 body {
@@ -47,6 +48,43 @@ body {
     display: flex;
 }
 
+
+.mic-icon {
+    width: 140px;
+    height: auto;
+    animation: smoothFloat 4s ease-in-out infinite;
+}
+
+@keyframes smoothFloat {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.btn-spotify:hover,
+.nav-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(251, 9, 180, 0.6);
+    filter: brightness(1.1);
+    background: linear-gradient(135deg, #007cf0, #00dfd8);
+    color: rgb(45, 36, 41);
+}
+
+.btn-outline:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: linear-gradient(135deg, #00FF88, #007cf0);
+    border: 1px solid #00FF88;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+    color: white;
+}
 
 /* Nav Style */
 .navbar {
@@ -92,6 +130,10 @@ hr {
     opacity: 0.2;
 }
 
+.hamburger-menu {
+    display: none;
+}
+
 /* Nav Bottom Style */
 
 .nav-bottom-content {
@@ -102,11 +144,14 @@ hr {
     justify-content: center;
     align-items: center;
     background-image: url('./img/hero-bg.png');
+    /* border: 6px solid rgba(42, 24, 108, 1); */
 }
 
 .mic-container {
     width: 350px;
     height: 350px;
+    border: 1px solid rgba(42, 24, 108, 1);
+    border-radius: 50%;
     background-image: url('./img/hero-circle.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -153,7 +198,6 @@ hr {
     font-weight: 400;
     width: 550px;
     height: 19px;
-    /* gap: 24; */
 }
 
 .cta-buttons {
@@ -172,7 +216,6 @@ hr {
     font-size: 16px;
     font-weight: 600;
     color: white;
-    /* gap: 8px; */
 }
 
 .btn-spotify img {
@@ -199,7 +242,7 @@ hr {
     background: transparent;
 }
 
-/* 1st header Section Style */
+/* 1st header Section(Podcast) Style */
 
 .podcast {
     height: 646px;
@@ -233,7 +276,7 @@ hr {
 .success {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 80;
+    gap: 80px;
 }
 
 .success-box {
@@ -265,9 +308,10 @@ hr {
 /* 2nd header section style */
 
 .choose {
-    height: 1121px;
+    /* height: 1121px;
     padding: 120px 200px;
-    background: rgba(35, 14, 61, 1);
+    max-width: 100%;
+    background: rgba(35, 14, 61, 1); */
 }
 
 .choose h1 {
@@ -289,7 +333,7 @@ hr {
     grid-template-areas:
         "o R R R"
         "o r r r"
-        "n n n O"
+        "n n n B"
     ;
 }
 
@@ -316,7 +360,6 @@ hr {
     font-style: medium;
     line-height: 24px;
     font-weight: 400;
-    line-height: 24px;
 }
 
 .headphone-box {
@@ -346,7 +389,7 @@ hr {
 .resource-box {
     width: 380px;
     height: 273px;
-    grid-area: O;
+    grid-area: B;
 }
 
 /* bottom section style */
@@ -491,6 +534,8 @@ footer {
     height: 412px;
     background-image: url('./img/footer-bg.png');
     /* align-items: center; */
+    background-size: cover;
+    background-position: center;
     text-align: center;
     padding: 120px;
 }
@@ -517,8 +562,9 @@ footer {
 .footer-media-link {
     gap: 10px;
 }
-.footer-media-link span{
-opacity: 0.6;
+
+.footer-media-link span {
+    opacity: 0.6;
 }
 
 .footer-bottom p {
@@ -531,4 +577,306 @@ opacity: 0.6;
     width: auto;
     display: inline-block;
     white-space: nowrap;
+}
+
+
+/* Hide the display */
+.hide {
+    display: none !important;
+}
+
+
+
+/* Responsive */
+/* Small Device */
+@media (max-width: 576px) {
+    /* body {
+        width: 100%;
+    } */
+
+    .navbar,
+    .podcast,
+    .choose,
+    .bottom-section,
+    footer {
+        height: auto;
+        width: 95%;
+    }
+
+    .navbar {
+        /* display: flex; */
+        padding: 16px 20px;
+        max-width: 440px;
+        /* max-width: 576px; */
+        height: 60px;
+    }
+
+    .tech-wave {
+        font-size: 40px;
+        height: auto;
+        font-weight: bolder;
+    }
+
+    .nav-btn {
+        display: none;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger-menu {
+        cursor: pointer;
+        display: block;
+    }
+
+    /* Nav Bottom Style */
+
+    .nav-bottom-content {
+        height: auto;
+        max-width: 100%;
+        background-image: url('./img/res-nav-hero-bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 40px;
+    }
+
+    .mic-container {
+        width: 200px;
+        height: 200px;
+        background-size: contain;
+    }
+
+    .nav-bottom-content h1 {
+        font-size: 40px;
+    }
+
+    .mic-icon {
+        width: 80px;
+    }
+
+    .badge-new {
+        top: 8px;
+        right: -20px;
+        width: auto;
+        height: auto;
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .nav-bottom-content p {
+        width: 100%;
+        height: auto;
+        padding: 0 10px;
+    }
+
+    .cta-buttons {
+        gap: 12px;
+    }
+
+    .btn-spotify,
+    .btn-outline {
+        margin-bottom: 10px;
+    }
+
+    /* 1st header Section(Podcast) Style */
+
+    .podcast {
+        padding: 40px 20px;
+        max-width: 100%;
+    }
+
+    .about-podcast {
+        align-items: stretch;
+    }
+
+    .about-podcast h2 {
+        font-size: 32px;
+    }
+
+    .about-podcast-p1 {
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .about-podcast-p1 br {
+        display: none;
+    }
+
+    /* Success Box  */
+    .success {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        max-width: 100%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .success-box {
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+    }
+
+
+    .success-box h2 {
+        font-size: 32px;
+    }
+
+    .success-box h2 i {
+        font-size: 25px;
+    }
+
+    /* 2nd header section style */
+
+    .choose {
+        max-width: 100%;
+        background: rgba(35, 14, 61, 1);
+        margin: auto;
+    }
+
+    .choose-box {
+        display: flex;
+        gap: 16px;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0;
+        gap: 16;
+        padding: 10%;
+        height: auto;
+        max-width: 100%;
+        padding-right: 20%;
+    }
+
+    .choose-h1 {
+        text-align: center;
+        background: rgba(35, 14, 61, 1);
+    }
+
+    .headphone-img {
+        margin-top: 5px;
+    }
+
+    .headphone-box,
+    .device-box,
+    .location-box,
+    .zap-fast-box,
+    .resource-box {
+        width: 100%;
+        height: auto;
+        max-height: 320px;
+        gap: 5px;
+    }
+
+    .choose-box h3 {
+        font-size: 22px;
+    }
+
+    /* bottom section style */
+    .bottom-section {
+        padding: 40px 20px;
+        margin: auto;
+    }
+
+    .episode {
+        height: auto;
+
+    }
+
+    .episode h1 {
+        font-size: 32px;
+    }
+
+    .video {
+        height: 600px;
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+        gap: 16px;
+    }
+
+    .frame iframe {
+        width: 100%;
+        max-height: 300px;
+        height: 300px;
+    }
+
+    .video-text {
+        gap: 8px;
+    }
+
+    /* Host style */
+    .host {
+        margin-top: 1080px;
+    }
+
+    .host-alex {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px;
+        width: 100%;
+        height: auto;
+        gap: 16px;
+    }
+
+    .host-alex img {
+        padding: auto 124px;
+    }
+
+    .about-host h2 {
+        font-size: 24px;
+    }
+
+    .about-host p {
+        text-align: center;
+    }
+
+    .host-media {
+        justify-content: center;
+    }
+
+    /* Footer style */
+
+
+    footer {
+        height: 412px;
+        /* align-items: center; */
+        background-repeat: no-repeat;
+        /* text-align: center; */
+        /* margin-top: 100px; */
+        background-size: contain;
+        background-position: center;
+        /* min-height: 100vh; */
+        /* padding: -20px; */
+        max-width: 100%;
+        height: auto;
+        margin-top: 40%;
+        margin-bottom: 0px;
+    }
+
+    .footer-text {
+        font-size: 30px;
+        margin-top: 50%;
+    }
+
+    .footer-media-link {
+        margin-bottom: 0px;
+    }
+
+    .footer-media {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .footer-bottom p {
+        margin-bottom: 0px;
+        /* margin-top: ; */
+    }
+
+
 }
